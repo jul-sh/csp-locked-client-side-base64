@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <title>Secure base64 encoding</title>
+    <style>
+      body {
+        font-family: -apple-system, Roboto, sans-serif;
+        padding: 20px;
+      }
+
+      h1,
+      p {
+        max-width: 800px;
+      }
+
+      textarea {
+        display: block;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 600px;
+        height: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Securely encode and decode base64 on-device. 🔒</h1>
+    <p>
+      The policy of on-device-processing is enforced using a
+      Content-Security-Policy header. This means users can rest assured that
+      this website cannot leak their data.
+    </p>
+    <p>
+      Content-Security-Policy used:<br />
+      <code
+        >default-src 'none'; sandbox allow-scripts; script-src 'unsafe-inline';
+        style-src 'unsafe-inline';</code
+      >
+    </p>
+    <p>
+      The presence of this secure Content-Security-Policy could be communicated
+      to users via browsers or browser extensions.
+    </p>
+    <p>
+      Website source:
+      <code
+        >https://github.com/juliettepretot/csp-locked-client-side-base64</code
+      >
+    </p>
+    <textarea
+      placeholder="Enter data to encode/decode here..."
+      id="textarea"
+    ></textarea>
+    <button id="encode-button">Encode</button>
+    <button id="decode-button">Decode</button>
+    <script>
+      const textarea = document.getElementById('textarea')
+
+      document.getElementById('encode-button').addEventListener('click', () => {
+        textarea.value = btoa(textarea.value)
+      })
+
+      document.getElementById('decode-button').addEventListener('click', () => {
+        textarea.value = atob(textarea.value)
+      })
+    </script>
+  </body>
+</html>
