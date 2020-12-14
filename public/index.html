@@ -24,28 +24,11 @@
   </head>
 
   <body>
-    <h1>Securely encode and decode base64 on-device. 🔒</h1>
+    <h1>Encode and decode base64 on-device. 🔒</h1>
     <p>
-      The policy of on-device-processing is enforced using a
-      Content-Security-Policy header. This means users can rest assured that
-      this website cannot leak their data.
-    </p>
-    <p>
-      Content-Security-Policy used:<br />
-      <code
-        >default-src 'none'; sandbox allow-scripts; script-src 'unsafe-inline';
-        style-src 'unsafe-inline';</code
-      >
-    </p>
-    <p>
-      The presence of this secure Content-Security-Policy could be communicated
-      to users via browsers or browser extensions.
-    </p>
-    <p>
-      Website source:
-      <code
-        >https://github.com/juliettepretot/csp-locked-client-side-base64</code
-      >
+      This website claims to perform base64 encoding on device. However, as a
+      user it is to verify this. By loading this website into a secure sandbox
+      such as the Oak chrome extension though, users can enforce this policy.
     </p>
     <textarea
       placeholder="Enter data to encode/decode here..."
