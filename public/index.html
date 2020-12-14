@@ -30,6 +30,11 @@
       user it is to verify this. By loading this website into a secure sandbox
       such as the Oak chrome extension though, users can enforce this policy.
     </p>
+    <a
+      href="https://github.com/juliettepretot/csp-locked-client-side-base64"
+      onclick="location.href = this.getAttribute('href') + '?' + encodeURIComponent(document.getElementById('textarea').value); return false;"
+      >inspect this websites source code</a
+    ><br />
     <textarea
       placeholder="Enter data to encode/decode here..."
       id="textarea"
